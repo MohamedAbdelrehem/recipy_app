@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipy_app/const/const.dart';
 
-import 'home_page.dart';
+import 'Pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
