@@ -6,12 +6,13 @@ class RecipeCard extends StatelessWidget {
   final String cookTime;
   final String thumbnailUrl;
   const RecipeCard({
-    super.key,
-    required this.title,
-    required this.rating,
-    required this.cookTime,
-    required this.thumbnailUrl,
-  });
+    Key key,
+    // super.key,
+    this.title,
+    this.rating,
+    this.cookTime,
+    this.thumbnailUrl,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class RecipeCard extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black,
-            offset: const Offset(
+            offset: Offset(
               0.0,
               10.0,
             ),

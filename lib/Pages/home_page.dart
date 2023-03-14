@@ -5,14 +5,14 @@ import 'package:recipy_app/model/recipe.api.dart';
 import 'package:recipy_app/model/recipe.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  // const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  late List<Recipe> _recipes;
+  List<Recipe> _recipes;
   bool _isLoading = true;
 
   @override
@@ -26,7 +26,6 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _isLoading = false;
     });
-    print(_recipes);
   }
 
   @override
@@ -47,7 +46,19 @@ class _HomePageState extends State<HomePage> {
           ),
         ]),
       ),
-      body: Text("test"),
+      body: _isLoading
+          ? Center(child: CircularProgressIndicator())
+          : ListView.builder(
+              itemCount: _recipes.length,
+              itemBuilder: (context, index) {
+                return RecipeCard(
+                  title: _recipes[index].name,
+                  cookTime: _recipes[index].cookingTime,
+                  rating: _recipes[index].rating.toString(),
+                  thumbnailUrl: _recipes[index].images,
+                );
+              },
+            ),
     );
   }
 }

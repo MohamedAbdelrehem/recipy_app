@@ -1,13 +1,9 @@
 class Recipe {
-  late String name;
-  late double rating;
-  late String cookingTime;
-  late String images;
-  Recipe(
-      {required this.name,
-      required this.rating,
-      required this.cookingTime,
-      required this.images});
+  String name;
+  double rating;
+  String cookingTime;
+  String images;
+  Recipe({this.name, this.rating, this.cookingTime, this.images});
   factory Recipe.fromJson(dynamic json) {
     return Recipe(
       name: json['name'] as String,
