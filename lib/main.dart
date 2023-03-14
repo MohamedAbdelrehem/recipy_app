@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:recipy_app/const/const.dart';
+import 'package:recipy_app/Constants/colors.dart';
+import 'package:recipy_app/Constants/constants.dart';
 
 import 'Pages/home_page.dart';
 
@@ -17,8 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'food recipy',
       theme: ThemeData(
-          primarySwatch: Colors.amber,
-          primaryColor: myPrimaryColor,
+          primarySwatch: generateMaterialColor(Palette.primaryAccent),
           textTheme:
               const TextTheme(bodyMedium: TextStyle(color: Colors.white))),
       home: HomePage(),

@@ -24,7 +24,7 @@ class RecipeCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.6),
+            color: Colors.black,
             offset: const Offset(
               0.0,
               10.0,
